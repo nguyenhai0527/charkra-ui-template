@@ -1,9 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { IconButton } from "@chakra-ui/react";
+import { Icon, IconButton } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
-
 import { BsMoonFill } from "react-icons/bs";
 import { PiSunBold } from "react-icons/pi";
 
@@ -22,13 +21,17 @@ const ColorModeToggle = () => {
       >
         <IconButton
           aria-label="Toggle theme"
-          colorPalette={theme === "light" ? "purple" : "orange"}
+          colorPalette={theme === "light" ? "purple" : "cyan"}
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           {theme === "light" ? (
-            <PiSunBold size={24} color="#fff" />
+            <Icon fontSize="20px" color="white">
+              <PiSunBold />
+            </Icon>
           ) : (
-            <BsMoonFill size={24} color="#fff" />
+            <Icon fontSize="20px" color="white">
+              <BsMoonFill />
+            </Icon>
           )}
         </IconButton>
       </motion.div>
