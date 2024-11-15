@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Outfit } from "next/font/google";
-import Head from "./head";
-import { ThemeProvider } from "@/components/theme-provider";
+import Head from "@/app/head";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
+
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
@@ -25,12 +25,12 @@ export default function RootLayout({
       <Head />
       <body>
         <ThemeProvider
+          defaultTheme="dark"
           attribute="class"
-          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Navbar path={""} />
           {children}
           <Footer />
         </ThemeProvider>
