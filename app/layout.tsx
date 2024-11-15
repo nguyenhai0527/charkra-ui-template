@@ -24,12 +24,7 @@ export default function RootLayout({
     <html className={`${outfit.className}`} lang="en" suppressHydrationWarning>
       <Head />
       <body>
-        <ThemeProvider
-          defaultTheme="dark"
-          attribute="class"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider defaultTheme="dark" attribute="class" enableSystem disableTransitionOnChange>
           <Navbar path={""} />
           {children}
           <Footer />
