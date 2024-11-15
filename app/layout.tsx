@@ -3,6 +3,8 @@ import "./globals.css";
 import { Outfit } from "next/font/google";
 import Head from "./head";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
@@ -28,7 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

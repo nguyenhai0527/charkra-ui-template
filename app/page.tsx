@@ -2,16 +2,13 @@ import {
   Box,
   Button,
   Checkbox,
-  ClientOnly,
   HStack,
   Heading,
   Progress,
   RadioGroup,
-  Skeleton,
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import ColorModeToggle from "@/components/dark-mode-toggle";
 
 export default async function Page() {
   return (
@@ -66,12 +63,6 @@ export default async function Page() {
           <Button variant="outline">bun install @chakra-ui/react</Button>
         </HStack>
       </VStack>
-
-      <Box pos="absolute" top="4" right="4">
-        <ClientOnly fallback={<Skeleton w="10" h="10" borderRadius={"full"} />}>
-          <ColorModeToggle />
-        </ClientOnly>
-      </Box>
     </Box>
   );
 }
