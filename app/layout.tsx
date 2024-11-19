@@ -4,6 +4,7 @@ import Head from "@/app/head";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Box } from "@chakra-ui/react";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -24,9 +25,14 @@ export default function RootLayout({
     <html className={`${outfit.className}`} lang="en" suppressHydrationWarning>
       <Head />
       <body>
-        <ThemeProvider defaultTheme="dark" attribute="class" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          defaultTheme="dark"
+          attribute="class"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar path={""} />
-          {children}
+          <Box pt={"6vh"}>{children}</Box>
           <Footer />
         </ThemeProvider>
       </body>
